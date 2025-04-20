@@ -1,0 +1,191 @@
+:root {
+    --primary-color: #2196F3;
+    --text-color: #333;
+    --border-color: #ddd;
+    --bg-color: #fff;
+    --hover-color: #f5f5f5;
+    --container-width: 80vw;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.container {
+    width: var(--container-width);
+    max-width: var(--max-width);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.control-panel {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+.control-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+}
+
+.control-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.control-item:last-child {
+    grid-column: 1 / -1;
+}
+
+.control-item label {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.display-panel {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.gradient-container {
+    width: 100%;
+}
+
+.gradient-bar {
+    height: 25vh;
+    min-height: 150px;
+    display: flex;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.gradient-bar div {
+    flex: 1;
+    height: 100%;
+}
+
+.image-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.image-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.mode-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.image-container {
+    width: 100%;
+    height: 50vh;
+    min-height: 300px;
+    border: 2px dashed var(--border-color);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.upload-placeholder {
+    color: #999;
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .control-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .control-item:last-child {
+        grid-column: auto;
+    }
+    
+    .image-controls {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .gradient-bar {
+        height: 20vh;
+    }
+    
+    .image-container {
+        height: 40vh;
+    }
+}
+
+.color-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.color-btn {
+    flex: 1;
+}
+
+.color-btn[data-color="red"] {
+    color: #ff0000;
+}
+
+.color-btn[data-color="green"] {
+    color: #00ff00;
+}
+
+.color-btn[data-color="blue"] {
+    color: #0000ff;
+}

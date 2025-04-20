@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灰阶测试工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>灰阶测试工具</h1>
+        </header>
+        
+        <main>
+            <section class="control-panel">
+                <div class="control-group">
+                    <div class="control-item level-control">
+                        <label>灰阶级别</label>
+                        <div class="level-buttons">
+                            <button id="decreaseLevel" class="btn">－</button>
+                            <span id="levelDisplay">10</span>
+                            <button id="increaseLevel" class="btn">＋</button>
+                        </div>
+                    </div>
+
+                    <div class="control-item">
+                        <label>背景选择</label>
+                        <div class="bg-buttons">
+                            <button class="btn bg-btn" data-color="white">白色</button>
+                            <button class="btn bg-btn" data-color="gray">灰色</button>
+                            <button class="btn bg-btn" data-color="black">黑色</button>
+                        </div>
+                    </div>
+
+                    <div class="control-item">
+                        <label>颜色选择</label>
+                        <div class="color-buttons">
+                            <button class="btn color-btn" data-color="gray">灰色</button>
+                            <button class="btn color-btn" data-color="red">红色</button>
+                            <button class="btn color-btn" data-color="green">绿色</button>
+                            <button class="btn color-btn" data-color="blue">蓝色</button>
+                        </div>
+                    </div>
+
+                    <div class="control-item">
+                        <label>灰阶分布</label>
+                        <div class="distribution-control">
+                            <input type="range" id="distribution" min="-3" max="3" step="0.1" value="0">
+                            <span id="distributionValue">0.0</span>
+                            <button id="resetDistribution" class="btn">重置</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="display-panel">
+                <div class="gradient-container">
+                    <div id="gradientBar" class="gradient-bar"></div>
+                </div>
+                <!-- 删除了 grayValues 相关元素 -->
+                <div id="grayValues" class="gray-values"></div>
+                </div>
+
+                <div class="image-section">
+                    <div class="image-controls">
+                        <input type="file" id="imageInput" accept="image/*" hidden>
+                        <button id="uploadBtn" class="btn primary">选择图片</button>
+                        <div class="mode-switch">
+                            <input type="checkbox" id="grayToggle" checked>
+                            <label for="grayToggle">图片黑白模式</label>
+                        </div>
+                    </div>
+                    
+                    <div id="imageContainer" class="image-container">
+                        <div class="upload-placeholder">
+                            <span>支持拖拽上传图片</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
